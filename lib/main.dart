@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'main_body.dart';
-import 'constant /main_body_data.dart';
+import 'constant/main_body_data.dart';
+import 'widgets/home_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,9 +40,11 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: MainPageBody(
-        list: initMainPageData(),
-      ),
+      body:
+      HomePage(),
+      // MainPageBody(
+      //   list: initMainPageData(),
+      // ),
     );
   }
 }

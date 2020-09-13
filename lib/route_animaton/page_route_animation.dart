@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class PageRouteAnimation extends PageRouteBuilder {
   Widget widget;
   AnimationType animationType;
+
   PageRouteAnimation({@required this.widget, this.animationType})
       : super(
             transitionDuration: Duration(seconds: 1),
@@ -11,6 +12,7 @@ class PageRouteAnimation extends PageRouteBuilder {
                 Animation<double> secondaryAnimation,
                 Widget child) {
               Widget resultWidget;
+
               switch (animationType) {
                 case AnimationType.FADETRANSITIONTYPE:
                   resultWidget = FadeTransition(
@@ -39,6 +41,28 @@ class PageRouteAnimation extends PageRouteBuilder {
                       CurvedAnimation(
                           parent: animation, curve: Curves.fastOutSlowIn),
                     ),
+                    child: RotationTransition(
+                      turns: Tween(
+                        begin: 0.0,
+                        end: 1.0,
+                      ).animate(
+                        CurvedAnimation(
+                            parent: animation, curve: Curves.fastOutSlowIn),
+                      ),
+                      child: child,
+                    ),
+                  );
+                  break;
+
+                case AnimationType.ROTATIONTRANSITIONTYPE:
+                  resultWidget = RotationTransition(
+                    turns: Tween(
+                      begin: 0.0,
+                      end: 1.0,
+                    ).animate(
+                      CurvedAnimation(
+                          parent: animation, curve: Curves.fastOutSlowIn),
+                    ),
                     child: child,
                   );
                   break;
@@ -64,5 +88,6 @@ class PageRouteAnimation extends PageRouteBuilder {
 enum AnimationType {
   FADETRANSITIONTYPE,
   SCALETRANSITIONTYPE,
-  SLIDETRANSITIONTYPE
+  SLIDETRANSITIONTYPE,
+  ROTATIONTRANSITIONTYPE,
 }
