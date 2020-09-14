@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/widgets/text/text_widget.dart';
 import 'package:flutter_demo/widgets/text/richtext_widget.dart';
+import 'package:flutter_demo/widgets/text/textfield_widget.dart';
 import 'package:flutter_demo/widgets/naviagtorbar/normal_navigator_bar.dart';
 import 'package:flutter_demo/widgets/naviagtorbar/not_normal_navigator_bar.dart';
+import 'package:flutter_demo/widgets/buttom/buttom_widget.dart';
+import 'package:flutter_demo/widgets/radio/radio_widget.dart';
+import 'package:flutter_demo/widgets/checkbox/checkbox_widget.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -40,11 +44,54 @@ List<ExpandStateBean> generateItems() {
           )
           ..add(
             ChildItemBean(
-              targetWidget: null,
+              targetWidget: TextFieldPage(),
               text: '文本输入-textField',
             ),
           ),
         headerValue: '文本组件',
+      ),
+    )
+    ..add(
+      ExpandStateBean(
+        isExpanded: false,
+        expandedValues: new List()
+          ..add(
+            ChildItemBean(
+              targetWidget: ButtomWidget(),
+              text: '按钮组件',
+            ),
+          )
+          ..add(
+            ChildItemBean(
+              targetWidget: RadioWidget(),
+              text: '单选组件',
+            ),
+          )
+          ..add(
+            ChildItemBean(
+              targetWidget: CheckBoxWidget(),
+              text: '复选组件',
+            ),
+          )
+          ..add(
+            ChildItemBean(
+              targetWidget: NotNormalNavigatorBar(),
+              text: '滑块组件',
+            ),
+          )
+          ..add(
+            ChildItemBean(
+              targetWidget: NotNormalNavigatorBar(),
+              text: '开关组件',
+            ),
+          )
+          ..add(
+            ChildItemBean(
+              targetWidget: NotNormalNavigatorBar(),
+              text: '进度组件',
+            ),
+          ),
+        headerValue: '基础组件',
       ),
     )
     ..add(
