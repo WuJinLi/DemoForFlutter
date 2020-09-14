@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/widgets/text_widget.dart';
+import 'package:flutter_demo/widgets/text/text_widget.dart';
+import 'package:flutter_demo/widgets/text/richtext_widget.dart';
 import 'package:flutter_demo/widgets/naviagtorbar/normal_navigator_bar.dart';
 import 'package:flutter_demo/widgets/naviagtorbar/not_normal_navigator_bar.dart';
 
@@ -33,7 +34,7 @@ List<ExpandStateBean> generateItems() {
           )
           ..add(
             ChildItemBean(
-              targetWidget: null,
+              targetWidget: RichTextWidgetPage(),
               text: '富文本-RichText',
             ),
           )
