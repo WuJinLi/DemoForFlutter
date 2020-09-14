@@ -16,3 +16,5 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
+### Flexible和 Expanded的区别是
+### Scaffold.of() called with a context that does not contain a Scaffold. -> [body下再加一层Builder](https://api.flutter.dev/flutter/material/Scaffold/of.html)
