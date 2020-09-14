@@ -22,6 +22,7 @@ samples, guidance on mobile development, and a full API reference.
   原因：因为你传递的 BuildContext 不是 Scaffold 的，而是当前parent widget的
   解决方案：
   + 使用 Builder 包裹
+
   、、、
     body: Builder(
       builder: (BuildContext context){
@@ -29,13 +30,13 @@ samples, guidance on mobile development, and a full API reference.
           children: <Widget>[
 
           ],
-
         );
       },
     ),
   、、、
 
   +给Scaffold 设置一个全局 key，通过 key 的如下方法来显示
+
   、、、
     var _scaffoldkey = new GlobalKey<ScaffoldState>();Scaffold(
         key: _scaffoldkey,
