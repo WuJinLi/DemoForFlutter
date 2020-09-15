@@ -7,20 +7,23 @@ class DescTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: Text(
-            '$content',
-            style: TextStyle(
-              fontSize: 18.0,
-              color: Colors.lightBlueAccent,
-              fontWeight: FontWeight.w300,
-              fontStyle: FontStyle.italic,
+    return Container(
+      margin: EdgeInsets.only(top: 10.0, bottom: 5.0),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Text(
+              '$content',
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.lightBlueAccent,
+                fontWeight: FontWeight.w300,
+                fontStyle: FontStyle.italic,
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

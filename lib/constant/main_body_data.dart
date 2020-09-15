@@ -7,7 +7,10 @@ import 'package:flutter_demo/widgets/naviagtorbar/not_normal_navigator_bar.dart'
 import 'package:flutter_demo/widgets/buttom/buttom_widget.dart';
 import 'package:flutter_demo/widgets/radio/radio_widget.dart';
 import 'package:flutter_demo/widgets/checkbox/checkbox_widget.dart';
-import 'package:flutter_demo/widgets/slider_widget/slider_widget.dart';
+import 'package:flutter_demo/widgets/slider/slider_widget.dart';
+import 'package:flutter_demo/widgets/switch/switch_widget.dart';
+import 'package:flutter_demo/widgets/progressIndicator/progressIndicator_widget.dart';
+import 'package:flutter_demo/widgets/imageandicon/image_and_icon_widget.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -82,14 +85,20 @@ List<ExpandStateBean> generateItems() {
           )
           ..add(
             ChildItemBean(
-              targetWidget: NotNormalNavigatorBar(),
+              targetWidget: SwitchWidget(),
               text: '开关组件',
             ),
           )
           ..add(
             ChildItemBean(
-              targetWidget: NotNormalNavigatorBar(),
+              targetWidget: ProgressIndicatorWidget(),
               text: '进度组件',
+            ),
+          )
+          ..add(
+            ChildItemBean(
+              targetWidget: ImageAndIconWidget(),
+              text: '图片和图标组件',
             ),
           ),
         headerValue: '基础组件',
