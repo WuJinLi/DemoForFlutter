@@ -7,6 +7,7 @@ import 'package:flutter_demo/widgets/naviagtorbar/not_normal_navigator_bar.dart'
 import 'package:flutter_demo/widgets/buttom/buttom_widget.dart';
 import 'package:flutter_demo/widgets/radio/radio_widget.dart';
 import 'package:flutter_demo/widgets/checkbox/checkbox_widget.dart';
+import 'package:flutter_demo/widgets/slider_widget/slider_widget.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -75,7 +76,7 @@ List<ExpandStateBean> generateItems() {
           )
           ..add(
             ChildItemBean(
-              targetWidget: NotNormalNavigatorBar(),
+              targetWidget: SliderWidget(),
               text: '滑块组件',
             ),
           )
