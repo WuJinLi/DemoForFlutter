@@ -12,6 +12,7 @@ import 'package:flutter_demo/widgets/switch/switch_widget.dart';
 import 'package:flutter_demo/widgets/progressIndicator/progressIndicator_widget.dart';
 import 'package:flutter_demo/widgets/imageandicon/image_and_icon_widget.dart';
 import 'package:flutter_demo/layout/row_and_column_layout.dart';
+import 'package:flutter_demo/layout/stack_layout.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -117,7 +118,7 @@ List<ExpandStateBean> generateItems() {
           )
           ..add(
             ChildItemBean(
-              targetWidget: NotNormalNavigatorBar(),
+              targetWidget: StackLayout(),
               text: '叠加布局-stack/IndexedStack',
             ),
           )
