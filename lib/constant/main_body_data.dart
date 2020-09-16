@@ -11,6 +11,7 @@ import 'package:flutter_demo/widgets/slider/slider_widget.dart';
 import 'package:flutter_demo/widgets/switch/switch_widget.dart';
 import 'package:flutter_demo/widgets/progressIndicator/progressIndicator_widget.dart';
 import 'package:flutter_demo/widgets/imageandicon/image_and_icon_widget.dart';
+import 'package:flutter_demo/layout/row_and_column_layout.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -102,6 +103,37 @@ List<ExpandStateBean> generateItems() {
             ),
           ),
         headerValue: '基础组件',
+      ),
+    )
+    ..add(
+      ExpandStateBean(
+        isExpanded: false,
+        expandedValues: new List()
+          ..add(
+            ChildItemBean(
+              targetWidget: RowAndColumnLayoutWidget(),
+              text: '水平/垂直布局-row/column',
+            ),
+          )
+          ..add(
+            ChildItemBean(
+              targetWidget: NotNormalNavigatorBar(),
+              text: '叠加布局-stack/IndexedStack',
+            ),
+          )
+          ..add(
+            ChildItemBean(
+              targetWidget: NotNormalNavigatorBar(),
+              text: '流式布局组件-Wrap',
+            ),
+          )
+          ..add(
+            ChildItemBean(
+              targetWidget: NotNormalNavigatorBar(),
+              text: '自定义布局组件-Flow',
+            ),
+          ),
+        headerValue: '布局组件',
       ),
     )
     ..add(
