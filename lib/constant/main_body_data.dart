@@ -14,6 +14,7 @@ import 'package:flutter_demo/widgets/imageandicon/image_and_icon_widget.dart';
 import 'package:flutter_demo/layout/row_and_column_layout.dart';
 import 'package:flutter_demo/layout/stack_layout.dart';
 import 'package:flutter_demo/layout/wrap_layout.dart';
+import 'package:flutter_demo/demos/mine_copy_for_juejin.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -128,12 +129,6 @@ List<ExpandStateBean> generateItems() {
               targetWidget: WarpLayout(),
               text: '流式布局组件-Wrap',
             ),
-          )
-          ..add(
-            ChildItemBean(
-              targetWidget: NotNormalNavigatorBar(),
-              text: '自定义布局组件-Flow',
-            ),
           ),
         headerValue: '布局组件',
       ),
@@ -153,6 +148,10 @@ List<ExpandStateBean> generateItems() {
               targetWidget: NotNormalNavigatorBar(),
               text: '不规则底部导航',
             ),
+          )
+          ..add(
+            ChildItemBean(
+                targetWidget: MinePageCopyForJueJin(), text: '仿掘金我的页面'),
           ),
         headerValue: '实战小案例',
       ),
