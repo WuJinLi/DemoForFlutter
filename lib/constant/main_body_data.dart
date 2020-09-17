@@ -16,6 +16,8 @@ import 'package:flutter_demo/layout/stack_layout.dart';
 import 'package:flutter_demo/layout/wrap_layout.dart';
 import 'package:flutter_demo/demos/mine_copy_for_juejin.dart';
 import 'package:flutter_demo/demos/buttom_for_loading.dart';
+import 'package:flutter_demo/demos/drawing_board.dart';
+import 'package:flutter_demo/widgets/listview/listview_widget.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -134,6 +136,13 @@ List<ExpandStateBean> generateItems() {
         headerValue: '布局组件',
       ),
     )
+    ..add(ExpandStateBean(
+        isExpanded: false,
+        expandedValues: new List()
+          ..add(
+            ChildItemBean(targetWidget: ListViewWidget(), text: 'ListView'),
+          ),
+        headerValue: '滚动和大数据组件'))
     ..add(
       ExpandStateBean(
         isExpanded: false,
@@ -155,8 +164,10 @@ List<ExpandStateBean> generateItems() {
                 targetWidget: MinePageCopyForJueJin(), text: '仿掘金我的页面'),
           )
           ..add(
-            ChildItemBean(
-                targetWidget: ButtomForLodaing(), text: '登录进度按钮'),
+            ChildItemBean(targetWidget: ButtomForLodaing(), text: '登录进度按钮'),
+          )
+          ..add(
+            ChildItemBean(targetWidget: DrawingBoard(), text: '画板'),
           ),
         headerValue: '实战小案例',
       ),
