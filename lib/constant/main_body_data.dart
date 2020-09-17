@@ -18,6 +18,7 @@ import 'package:flutter_demo/demos/mine_copy_for_juejin.dart';
 import 'package:flutter_demo/demos/buttom_for_loading.dart';
 import 'package:flutter_demo/demos/drawing_board.dart';
 import 'package:flutter_demo/widgets/listview/listview_widget.dart';
+import 'package:flutter_demo/widgets/gridview/grdiview_widget.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -141,6 +142,9 @@ List<ExpandStateBean> generateItems() {
         expandedValues: new List()
           ..add(
             ChildItemBean(targetWidget: ListViewWidget(), text: 'ListView'),
+          )
+          ..add(
+            ChildItemBean(targetWidget: GridViewWidget(), text: 'GridView'),
           ),
         headerValue: '滚动和大数据组件'))
     ..add(
