@@ -53,6 +53,7 @@ flutter:
     - images/img_dog.png
     - images/img_baidu.png
     - images/img_flutter.png
+    - images/img_sliver_appbar.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -19,6 +19,13 @@ import 'package:flutter_demo/demos/buttom_for_loading.dart';
 import 'package:flutter_demo/demos/drawing_board.dart';
 import 'package:flutter_demo/widgets/listview/listview_widget.dart';
 import 'package:flutter_demo/widgets/gridview/grdiview_widget.dart';
+import 'package:flutter_demo/widgets/pageview/pageview_widget.dart';
+import 'package:flutter_demo/widgets/sliverwidget/sliverlist_slivergrid.dart';
+import 'package:flutter_demo/widgets/sliverwidget/sliverappbar.dart';
+import 'package:flutter_demo/widgets/sliverwidget/sliver_persistent_header.dart';
+import 'package:flutter_demo/widgets/sliverwidget/slivertoboxadapte.dart';
+import 'package:flutter_demo/widgets/sliverwidget/nestedscrollview.dart';
+import 'package:flutter_demo/widgets/datepicker/datepicker.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -145,8 +152,45 @@ List<ExpandStateBean> generateItems() {
           )
           ..add(
             ChildItemBean(targetWidget: GridViewWidget(), text: 'GridView'),
+          )
+          ..add(
+            ChildItemBean(targetWidget: PageViewWidget(), text: 'PageView'),
           ),
         headerValue: '滚动和大数据组件'))
+    ..add(ExpandStateBean(
+        isExpanded: false,
+        expandedValues: new List()
+          ..add(ChildItemBean(
+              targetWidget: SliverListAndSliverGrid(),
+              text: 'SliverList/SliverGrid'))
+          ..add(ChildItemBean(
+              targetWidget: SliverAppBarWidget(), text: 'SliverAppBar'))
+          ..add(ChildItemBean(
+              targetWidget: SliverPersistentHeaderWidget(),
+              text: 'SliverPersistentHeader'))
+          ..add(ChildItemBean(
+              targetWidget: SliverToBoxAdapteWidget(),
+              text: 'SliverToBoxAdapter'))
+          ..add(ChildItemBean(
+              targetWidget: SliverListAndSliverGrid(),
+              text: 'CustomScrollView'))
+          ..add(ChildItemBean(
+              targetWidget: NestedScrollViewWidget(),
+              text: 'NestedScrollView')),
+        headerValue: 'Sliver系列组件'))
+    ..add(ExpandStateBean(
+      isExpanded: false,
+      expandedValues: new List()
+        ..add(ChildItemBean(targetWidget: ShowDatePicker(), text: '日期选择器'))
+        ..add(ChildItemBean(targetWidget: null, text: '时间选择器'))
+        ..add(ChildItemBean(targetWidget: null, text: 'ios风格日期选择器'))
+        ..add(ChildItemBean(targetWidget: null, text: 'ios风格时间选择器'))
+        ..add(ChildItemBean(targetWidget: null, text: '弹出菜单'))
+        ..add(ChildItemBean(targetWidget: null, text: '弹出提示/警示框'))
+        ..add(ChildItemBean(targetWidget: null, text: '拖拽组件'))
+        ..add(ChildItemBean(targetWidget: null, text: '缩放、平移组件')),
+      headerValue: '功能型组件',
+    ))
     ..add(
       ExpandStateBean(
         isExpanded: false,
