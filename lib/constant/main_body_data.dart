@@ -26,6 +26,7 @@ import 'package:flutter_demo/widgets/sliverwidget/sliver_persistent_header.dart'
 import 'package:flutter_demo/widgets/sliverwidget/slivertoboxadapte.dart';
 import 'package:flutter_demo/widgets/sliverwidget/nestedscrollview.dart';
 import 'package:flutter_demo/widgets/datepicker/datepicker.dart';
+import 'package:flutter_demo/widgets/menu/menu_widget.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -199,7 +200,7 @@ List<ExpandStateBean> generateItems() {
               type: TypeOfShow.cupertinoTimerPicker,
             ),
             text: 'ios风格时间选择器'))
-        ..add(ChildItemBean(targetWidget: null, text: '弹出菜单'))
+        ..add(ChildItemBean(targetWidget: MenuWidget(), text: '弹出菜单'))
         ..add(ChildItemBean(targetWidget: null, text: '弹出提示/警示框'))
         ..add(ChildItemBean(targetWidget: null, text: '拖拽组件'))
         ..add(ChildItemBean(targetWidget: null, text: '缩放、平移组件')),
