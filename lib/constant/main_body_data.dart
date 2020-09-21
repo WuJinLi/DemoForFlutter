@@ -192,10 +192,13 @@ List<ExpandStateBean> generateItems() {
             ),
             text: '时间选择器'))
         ..add(ChildItemBean(
-            targetWidget: s =
-                ShowDatePicker(type: TypeOfShow.cupertinoDatePicker),
+            targetWidget: ShowDatePicker(type: TypeOfShow.cupertinoDatePicker),
             text: 'ios风格日期选择器'))
-        ..add(ChildItemBean(targetWidget: null, text: 'ios风格时间选择器'))
+        ..add(ChildItemBean(
+            targetWidget: ShowDatePicker(
+              type: TypeOfShow.cupertinoTimerPicker,
+            ),
+            text: 'ios风格时间选择器'))
         ..add(ChildItemBean(targetWidget: null, text: '弹出菜单'))
         ..add(ChildItemBean(targetWidget: null, text: '弹出提示/警示框'))
         ..add(ChildItemBean(targetWidget: null, text: '拖拽组件'))

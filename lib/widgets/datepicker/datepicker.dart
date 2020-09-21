@@ -47,7 +47,7 @@ class _ShowDatePickerState extends State<ShowDatePicker> {
               });
             });
       case TypeOfShow.showDatePicker:
-        WidthMatchBottonWidget(
+        return WidthMatchBottonWidget(
           title: 'showDatePicker',
           onPressed: () async {
             var result = await showDatePicker(
@@ -65,9 +65,8 @@ class _ShowDatePickerState extends State<ShowDatePicker> {
             });
           },
         );
-        break;
       case TypeOfShow.cupertinoDatePicker:
-        Container(
+        return Container(
           height: 200,
           color: Colors.grey[200],
           child: CupertinoDatePicker(
@@ -79,7 +78,27 @@ class _ShowDatePickerState extends State<ShowDatePicker> {
             initialDateTime: DateTime.now(),
           ),
         );
-        break;
+
+      /**
+     * 设置显示模式：
+        CupertinoTimerPickerMode.hm：显示 小时 | 分钟，英文效果16 hours | 14 min
+        CupertinoTimerPickerMode.ms： 显示 分钟 | 秒，英文效果14 min | 43 sec
+        CupertinoTimerPickerMode.hms：显示 小时 | 分钟 | 秒，英文效果16 hours | 14 min | 43 sec
+     */
+      case TypeOfShow.cupertinoTimerPicker:
+        return CupertinoTimerPicker(
+          onTimerDurationChanged: (time) {
+            setState(() {
+              result_show = time;
+            });
+          },
+          backgroundColor: Colors.grey[200],
+          mode: CupertinoTimerPickerMode.hms,
+          initialTimerDuration: Duration(
+              hours: DateTime.now().hour,
+              minutes: DateTime.now().minute,
+              seconds: DateTime.now().second),
+        );
     }
   }
 
@@ -101,4 +120,9 @@ class _ShowDatePickerState extends State<ShowDatePicker> {
   }
 }
 
-enum TypeOfShow { showDatePicker, showTimePicker, cupertinoDatePicker }
+enum TypeOfShow {
+  showDatePicker,
+  showTimePicker,
+  cupertinoDatePicker,
+  cupertinoTimerPicker
+}
