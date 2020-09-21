@@ -34,14 +34,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   _MyHomePageState();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body:
-      HomePage(),
+      body: HomePage(),
       // MainPageBody(
       //   list: initMainPageData(),
       // ),
