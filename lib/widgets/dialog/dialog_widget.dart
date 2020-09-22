@@ -114,37 +114,43 @@ class _DialogWidgetState extends State<DialogWidget> {
   Widget build(BuildContext context) {
     return PageBaseContainScaffoldWidget(
       title: 'dialog',
-      child: Column(
-        children: [
-          DescTextWidget(
-              content: 'alertDialog /cupertinoAlertDialog/simpleDialog/Dialog'),
-          WidthMatchBottonWidget(
-              title: 'alertDialog',
-              onPressed: () {
-                _showWidget(context, DialogType.alertDialog);
-              }),
-          WidthMatchBottonWidget(
-              title: 'cupertinoAlertDialog',
-              onPressed: () {
-                _showWidget(context, DialogType.cupertinoAlertDialog);
-              }),
-          WidthMatchBottonWidget(
-              title: 'simpleDialog',
-              onPressed: () {
-                _showWidget(context, DialogType.simpleDialog);
-              }),
-          WidthMatchBottonWidget(
-              title: 'dialog',
-              onPressed: () {
-                _showWidget(context, DialogType.dialog);
-              }),
-          DescTextWidget(
-              content:
-                  'showDialog和AlertDialog配合使用展示Material风格对话框，showCupertinoDialog和CupertinoAlertDialog配合使用展示iOS风格对话框，showCupertinoDialog点击空白处是无法退出对话框的，而showDialog点击空白处默认退出对话框，barrierDismissible属性控制点击空白处的行为'),
-          DescTextWidget(
-              content:
-                  '如果你觉得这还是不够个性，那可以祭出终极大招了，直接使用Dialog，Dialog可以定制任何对话框，只需将对话框的内容给child属性'),
-        ],
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        reverse: false,
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            DescTextWidget(
+                content:
+                    'alertDialog /cupertinoAlertDialog/simpleDialog/Dialog'),
+            WidthMatchBottonWidget(
+                title: 'alertDialog',
+                onPressed: () {
+                  _showWidget(context, DialogType.alertDialog);
+                }),
+            WidthMatchBottonWidget(
+                title: 'cupertinoAlertDialog',
+                onPressed: () {
+                  _showWidget(context, DialogType.cupertinoAlertDialog);
+                }),
+            WidthMatchBottonWidget(
+                title: 'simpleDialog',
+                onPressed: () {
+                  _showWidget(context, DialogType.simpleDialog);
+                }),
+            WidthMatchBottonWidget(
+                title: 'dialog',
+                onPressed: () {
+                  _showWidget(context, DialogType.dialog);
+                }),
+            DescTextWidget(
+                content:
+                    'showDialog和AlertDialog配合使用展示Material风格对话框，showCupertinoDialog和CupertinoAlertDialog配合使用展示iOS风格对话框，showCupertinoDialog点击空白处是无法退出对话框的，而showDialog点击空白处默认退出对话框，barrierDismissible属性控制点击空白处的行为'),
+            DescTextWidget(
+                content:
+                    '如果你觉得这还是不够个性，那可以祭出终极大招了，直接使用Dialog，Dialog可以定制任何对话框，只需将对话框的内容给child属性'),
+          ],
+        ),
       ),
     );
   }

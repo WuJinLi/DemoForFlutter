@@ -72,35 +72,44 @@ class _MenuWidgetState extends State<MenuWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return PageBaseContainScaffoldWidget(
-      title: '弹出菜单',
-      child: Column(
-        children: <Widget>[
-          DescTextWidget(content: 'PopupMenuItem:'),
-          _popMenuView(TypeOfMenu.normal),
-          SizedBox(
-            height: 10,
-          ),
-          DescTextWidget(content: 'CheckedPopupMenuItem:'),
-          _popMenuView(TypeOfMenu.hasFlag),
-          DescTextWidget(content: 'showMenu'),
-          WidthMatchBottonWidget(
-            title: 'showMenu',
-            onPressed: () async {
-              var result = await showMenu(
-                  context: context,
-                  position: RelativeRect.fromLTRB(0.0, 300.0, 0.0, 0.0),
-                  items: _popMenu(),
-                  initialValue: '0');
+    return  Scaffold(
+        appBar: AppBar(
+          title: Text('dialog'),
+        ),
+        body: Container(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            physics: BouncingScrollPhysics(),
+            reverse: false,
+            child: Column(
+              children: <Widget>[
+                DescTextWidget(content: 'PopupMenuItem:'),
+                _popMenuView(TypeOfMenu.normal),
+                SizedBox(
+                  height: 10,
+                ),
+                DescTextWidget(content: 'CheckedPopupMenuItem:'),
+                _popMenuView(TypeOfMenu.hasFlag),
+                DescTextWidget(content: 'showMenu'),
+                WidthMatchBottonWidget(
+                  title: 'showMenu',
+                  onPressed: () async {
+                    var result = await showMenu(
+                        context: context,
+                        position: RelativeRect.fromLTRB(0.0, 300.0, 0.0, 0.0),
+                        items: _popMenu(),
+                        initialValue: '0');
 
-              setState(() {
-                resultShow = result;
-              });
-            },
+                    setState(() {
+                      resultShow = result;
+                    });
+                  },
+                ),
+                DescTextWidget(content: 'showMenu:$resultShow'),
+              ],
+            ),
           ),
-          DescTextWidget(content: 'showMenu:$resultShow'),
-        ],
-      ),
+        ),
     );
   }
 }
