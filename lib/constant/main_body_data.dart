@@ -204,9 +204,17 @@ List<ExpandStateBean> generateItems() {
             text: 'ios风格时间选择器'))
         ..add(ChildItemBean(targetWidget: MenuWidget(), text: '弹出菜单'))
         ..add(ChildItemBean(targetWidget: DialogWidget(), text: '弹出提示/警示框'))
-        ..add(ChildItemBean(targetWidget: DragWidget(), text: '拖拽组件'))
-        ..add(ChildItemBean(targetWidget: null, text: '缩放、平移组件')),
+        ..add(ChildItemBean(targetWidget: DragWidget(), text: '拖拽组件')),
       headerValue: '功能型组件',
+    ))
+    ..add(ExpandStateBean(
+      headerValue: '动画',
+      isExpanded: false,
+      expandedValues: new List()
+        ..add(ChildItemBean(targetWidget: null, text: '动画核心-AnimationController'))
+        ..add(ChildItemBean(targetWidget: null, text: '动画核心-Tween'))
+        ..add(ChildItemBean(targetWidget: null, text: '动画核心-Curve'))
+        ..add(ChildItemBean(targetWidget: null, text: '过度动画-Hero')),
     ))
     ..add(
       ExpandStateBean(
