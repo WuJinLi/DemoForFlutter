@@ -28,6 +28,7 @@ import 'package:flutter_demo/widgets/sliverwidget/nestedscrollview.dart';
 import 'package:flutter_demo/widgets/datepicker/datepicker.dart';
 import 'package:flutter_demo/widgets/menu/menu_widget.dart';
 import 'package:flutter_demo/widgets/dialog/dialog_widget.dart';
+import 'package:flutter_demo/widgets/drag/drag_widget.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -203,7 +204,7 @@ List<ExpandStateBean> generateItems() {
             text: 'ios风格时间选择器'))
         ..add(ChildItemBean(targetWidget: MenuWidget(), text: '弹出菜单'))
         ..add(ChildItemBean(targetWidget: DialogWidget(), text: '弹出提示/警示框'))
-        ..add(ChildItemBean(targetWidget: null, text: '拖拽组件'))
+        ..add(ChildItemBean(targetWidget: DragWidget(), text: '拖拽组件'))
         ..add(ChildItemBean(targetWidget: null, text: '缩放、平移组件')),
       headerValue: '功能型组件',
     ))
