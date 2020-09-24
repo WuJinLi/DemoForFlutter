@@ -29,6 +29,7 @@ import 'package:flutter_demo/widgets/datepicker/datepicker.dart';
 import 'package:flutter_demo/widgets/menu/menu_widget.dart';
 import 'package:flutter_demo/widgets/dialog/dialog_widget.dart';
 import 'package:flutter_demo/widgets/drag/drag_widget.dart';
+import 'package:flutter_demo/animation/animationcontroller.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -211,7 +212,7 @@ List<ExpandStateBean> generateItems() {
       headerValue: '动画',
       isExpanded: false,
       expandedValues: new List()
-        ..add(ChildItemBean(targetWidget: null, text: '动画核心-AnimationController'))
+        ..add(ChildItemBean(targetWidget: AnimationControllerDemo(), text: '动画核心-AnimationController'))
         ..add(ChildItemBean(targetWidget: null, text: '动画核心-Tween'))
         ..add(ChildItemBean(targetWidget: null, text: '动画核心-Curve'))
         ..add(ChildItemBean(targetWidget: null, text: '过度动画-Hero')),
