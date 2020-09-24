@@ -43,31 +43,41 @@ class _AnimationControllerDemoState extends State<AnimationControllerDemo>
   @override
   Widget build(BuildContext context) {
     return PageBaseContainScaffoldWidget(
-        title: 'AnimationController',
-        child: Container(
-          alignment: Alignment.center,
-          child: GestureDetector(
-            child: Container(
+      title: 'AnimationController',
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            DescTextWidget(
+                content:
+                    '动画系统的核心是 AnimationController，而且是不可或缺的，动画中必须有 AnimationController，而 Tween 和 Curve 则是对 AnimationController 的补充'),
+            Container(
               alignment: Alignment.center,
-              width: _size,
-              height: _size,
-              color: Colors.blue,
-              child: Text(
-                '点我变大',
-                style: TextStyle(color: Colors.white, fontSize: 18),
+              child: GestureDetector(
+                child: Container(
+                  alignment: Alignment.center,
+                  width: _size,
+                  height: _size,
+                  color: Colors.blue,
+                  child: Text(
+                    '点我变大',
+                    style: TextStyle(color: Colors.white, fontSize: 18),
+                  ),
+                ),
+                onTap: () {
+                  _controller.forward();
+                },
               ),
-            ),
-            onTap: () {
-              _controller.forward();
-            },
-          ),
-        ));
+            )
+          ],
+        ),
+      ),
+    );
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
-    super.dispose();
     _controller.dispose();
+    super.dispose();
   }
 }
