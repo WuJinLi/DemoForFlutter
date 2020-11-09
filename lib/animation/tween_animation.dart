@@ -10,16 +10,17 @@ class TweenDemo extends StatefulWidget {
   _TweenDemoState createState() => _TweenDemoState();
 }
 
-class _TweenDemoState extends State<TweenDemo>
-    with SingleTickerProviderStateMixin {
+class _TweenDemoState extends State<TweenDemo> with TickerProviderStateMixin {
   Color _startColor = Colors.blue;
   Color _endColor = Colors.red;
   Color _color = Colors.blue;
   AnimationController _controller;
 
+  AnimationController _colorAnimationController;
+  Animation _animation;
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _controller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 2000))
@@ -35,6 +36,15 @@ class _TweenDemoState extends State<TweenDemo>
               _controller.forward();
             }
           });
+
+    _colorAnimationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 1000))
+          ..addListener(() {
+            setState(() {});
+          });
+
+    _animation = ColorTween(begin: Colors.blue, end: Colors.red)
+        .animate(_colorAnimationController);
   }
 
   @override
@@ -44,7 +54,13 @@ class _TweenDemoState extends State<TweenDemo>
       child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            DescTextWidget(content: 'AnimationController实现颜色的渐变'),
+            DescTextWidget(
+              content:
+                  'Tween 实现了将 AnimationController [0,1]的值映射为其他类型的值，比如颜色、样式等',
+            ),
+            DescTextWidget(
+              content: 'AnimationController实现颜色的渐变',
+            ),
             WidthMatchBottonWidget(
                 title: '开始变色',
                 onPressed: () {
@@ -55,12 +71,26 @@ class _TweenDemoState extends State<TweenDemo>
                 onPressed: () {
                   _controller.stop();
                 }),
-
-            DescTextWidget(content: 'Tween实现颜色的渐变'),
             Container(
               width: 100,
               height: 100,
               color: _color,
+            ),
+            DescTextWidget(content: 'Tween实现颜色的渐变'),
+            WidthMatchBottonWidget(
+                title: '开始变色',
+                onPressed: () {
+                  _colorAnimationController.forward();
+                }),
+            WidthMatchBottonWidget(
+                title: '停止',
+                onPressed: () {
+                  _colorAnimationController.stop();
+                }),
+            Container(
+              width: 100,
+              height: 100,
+              color: _animation.value,
             )
           ],
         ),
@@ -70,8 +100,8 @@ class _TweenDemoState extends State<TweenDemo>
 
   @override
   void dispose() {
-    // TODO: implement dispose
-    super.dispose();
     _controller.dispose();
+    _colorAnimationController.dispose();
+    super.dispose();
   }
 }

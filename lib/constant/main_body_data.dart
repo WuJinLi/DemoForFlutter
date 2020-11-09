@@ -30,6 +30,9 @@ import 'package:flutter_demo/widgets/menu/menu_widget.dart';
 import 'package:flutter_demo/widgets/dialog/dialog_widget.dart';
 import 'package:flutter_demo/widgets/drag/drag_widget.dart';
 import 'package:flutter_demo/animation/animationController.dart';
+import 'package:flutter_demo/animation/tween_animation.dart';
+import 'package:flutter_demo/animation/curve_animation.dart';
+import 'package:flutter_demo/animation/animation_summary.dart';
 import 'package:flutter_demo/animation/tween.dart';
 import 'package:flutter_demo/route/route_stack.dart';
 import 'package:flutter_demo/httprequest/httpclient_request.dart';
@@ -219,7 +222,8 @@ List<ExpandStateBean> generateItems() {
             targetWidget: AnimationControllerDemo(),
             text: '动画核心-AnimationController'))
         ..add(ChildItemBean(targetWidget: TweenDemo(), text: '动画核心-Tween'))
-        ..add(ChildItemBean(targetWidget: null, text: '动画核心-Curve'))
+        ..add(ChildItemBean(targetWidget: CurveAnimation(), text: '动画核心-Curve'))
+        ..add(ChildItemBean(targetWidget: AnimationSummary(), text: '动画总结'))
         ..add(ChildItemBean(targetWidget: null, text: '过度动画-Hero')),
     ))
     ..add(
