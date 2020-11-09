@@ -31,6 +31,8 @@ import 'package:flutter_demo/widgets/dialog/dialog_widget.dart';
 import 'package:flutter_demo/widgets/drag/drag_widget.dart';
 import 'package:flutter_demo/animation/animationController.dart';
 import 'package:flutter_demo/animation/tween.dart';
+import 'package:flutter_demo/route/route_stack.dart';
+import 'package:flutter_demo/httprequest/httpclient_request.dart';
 
 // 控制打开和关闭的类
 class ExpandStateBean {
@@ -220,6 +222,25 @@ List<ExpandStateBean> generateItems() {
         ..add(ChildItemBean(targetWidget: null, text: '动画核心-Curve'))
         ..add(ChildItemBean(targetWidget: null, text: '过度动画-Hero')),
     ))
+    ..add(
+      ExpandStateBean(
+        headerValue: "路由",
+        isExpanded: false,
+        expandedValues: new List()
+          ..add(ChildItemBean(targetWidget: RouteStack(), text: '路由堆栈')),
+      ),
+    )
+    ..add(
+      ExpandStateBean(
+        headerValue: "网络请求",
+        isExpanded: false,
+        expandedValues: new List()
+          ..add(
+            ChildItemBean(
+                targetWidget: HttpClientRequestDemo(), text: 'httpClient'),
+          ),
+      ),
+    )
     ..add(
       ExpandStateBean(
         isExpanded: false,
