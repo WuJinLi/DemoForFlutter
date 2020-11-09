@@ -50,7 +50,4 @@ class _HttpClientRequestDemo extends State<HttpClientRequestDemo> {
           ],
         ));
   }
-
-
-  }
 }
